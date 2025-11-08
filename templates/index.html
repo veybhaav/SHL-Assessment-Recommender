@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHL Assessment Recommendation System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #4facfe);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, #fff 0%, #e0e7ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .main-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 1px rgba(255,255,255,0.5) inset;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .main-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.4), 0 0 1px rgba(255,255,255,0.5) inset;
+        }
+
+        .input-section {
+            margin-bottom: 30px;
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+            background: rgba(102, 126, 234, 0.08);
+            padding: 8px;
+            border-radius: 16px;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 16px 24px;
+            border: none;
+            background: transparent;
+            color: #667eea;
+            cursor: pointer;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tab-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn:hover:not(.active) {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: #1a202c;
+            font-size: 0.95em;
+            letter-spacing: 0.3px;
+        }
+
+        textarea, input[type="url"] {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: #f7fafc;
+        }
+
+        textarea:focus, input[type="url"]:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .submit-btn:active::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(102, 126, 234, 0.5);
+        }
+
+        .submit-btn:active:not(:disabled) {
+            transform: translateY(-1px);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .spinner {
+            border: 4px solid rgba(102, 126, 234, 0.2);
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .results {
+            display: none;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .results-header h2 {
+            font-size: 2em;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+
+        .result-count {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95em;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .table-container {
+            overflow-x: auto;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: white;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        th, td {
+            padding: 18px 16px;
+            text-align: left;
+        }
+
+        th {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 0.8px;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+        }
+
+        thead th:first-child {
+            border-top-left-radius: 16px;
+        }
+
+        thead th:last-child {
+            border-top-right-radius: 16px;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #f0f4f8;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        tbody tr:hover {
+            background: linear-gradient(to right, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+            transform: scale(1.005);
+            box-shadow: 0 4px 16px rgba(102, 126, 234, 0.1);
+        }
+
+        tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        tbody tr:last-child td:first-child {
+            border-bottom-left-radius: 16px;
+        }
+
+        tbody tr:last-child td:last-child {
+            border-bottom-right-radius: 16px;
+        }
+
+        td {
+            color: #4a5568;
+            font-size: 0.95em;
+            vertical-align: middle;
+        }
+
+        .assessment-name {
+            font-weight: 700;
+            color: #1a202c;
+        }
+
+        .assessment-name a {
+            color: #667eea;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+            font-weight: 600;
+        }
+
+        .assessment-name a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+
+        .assessment-name a:hover {
+            color: #764ba2;
+            transform: translateX(4px);
+        }
+
+        .assessment-name a:hover::after {
+            width: 100%;
+        }
+
+        .assessment-url {
+            color: #667eea;
+            text-decoration: none;
+            word-break: break-all;
+            transition: color 0.3s ease;
+        }
+
+        .assessment-url:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        .similarity-score {
+            display: inline-block;
+            padding: 6px 14px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            color: #667eea;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85em;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .similarity-score:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            transform: scale(1.05);
+        }
+
+        .error {
+            display: none;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+            color: white;
+            padding: 20px 24px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff5252;
+            box-shadow: 0 8px 24px rgba(255, 107, 107, 0.3);
+            font-weight: 500;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .stats {
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+            opacity: 0.95;
+            font-size: 1.05em;
+            font-weight: 500;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        /* Additional professional styling */
+        .skill-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            margin: 2px;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            color: #1976d2;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 600;
+            border: 1px solid #90caf9;
+        }
+
+        .duration-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            color: #f57c00;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.9em;
+            border: 1px solid #ffb74d;
+        }
+
+        /* Enhance form inputs */
+        input::placeholder,
+        textarea::placeholder {
+            color: #a0aec0;
+            opacity: 0.7;
+        }
+
+        /* Add subtle scroll shadow */
+        .table-container {
+            position: relative;
+        }
+
+        .table-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), transparent);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Professional input focus rings */
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 3px solid rgba(102, 126, 234, 0.3);
+            outline-offset: 2px;
+        }
+
+        /* Card stacking effect */
+        .main-card::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: -10px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 24px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .main-card:hover::after {
+            opacity: 1;
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Better selection color */
+        ::selection {
+            background: rgba(102, 126, 234, 0.3);
+            color: #1a202c;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Loading animation enhancement */
+        .loading-text {
+            color: #667eea;
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* Responsive design improvements */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2em;
+            }
+
+            .header p {
+                font-size: 1em;
+            }
+
+            .main-card {
+                padding: 24px;
+                border-radius: 20px;
+            }
+
+            th, td {
+                padding: 12px 8px;
+                font-size: 0.85em;
+            }
+
+            .tab-btn {
+                padding: 12px 16px;
+                font-size: 14px;
+            }
+
+            .submit-btn {
+                padding: 16px 24px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            body {
+                padding: 10px;
+            }
+
+            .main-card {
+                padding: 20px;
+            }
+        }
+
+            table {
+                font-size: 14px;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>SHL Assessment Recommender</h1>
+        </div>
+
+        <div class="main-card">
+            <div class="input-section">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" onclick="switchTab('text')">Natural Language Query / Job Description</button>
+                    <button class="tab-btn" onclick="switchTab('url')">Job Description URL</button>
+                </div>
+
+                <div class="error" id="error"></div>
+
+                <form id="recommendForm">
+                    <div class="input-group" id="textInput">
+                        <label for="queryText">Enter your requirements or paste job description:</label>
+                        <textarea id="queryText" placeholder="Example: I am hiring for Java developers who can also collaborate effectively with my business teams. Looking for an assessment(s) that can be completed in 40 minutes."></textarea>
+                    </div>
+
+                    <div class="input-group hidden" id="urlInput">
+                        <label for="queryUrl">Enter Job Description URL:</label>
+                        <input type="url" id="queryUrl" placeholder="https://example.com/job-posting">
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        Get Recommendations
+                    </button>
+                </form>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p class="loading-text">Analyzing your requirements with AI...</p>
+                <p style="color: #a0aec0; font-size: 0.9em; margin-top: 10px;">Finding the perfect assessments for you</p>
+            </div>
+
+            <div class="results" id="results">
+                <div class="results-header">
+                    <h2>Recommended Assessments</h2>
+                    <span class="result-count" id="resultCount">0 results</span>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Assessment Name</th>
+                                <th>Duration (min)</th>
+                                <th>Description</th>
+                                <th>Test Type</th>
+                                <th>Adaptive</th>
+                                <th>Remote</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentTab = 'text';
+
+        function switchTab(tab) {
+            currentTab = tab;
+            
+            // Update button styles
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Show/hide inputs
+            if (tab === 'text') {
+                document.getElementById('textInput').classList.remove('hidden');
+                document.getElementById('urlInput').classList.add('hidden');
+            } else {
+                document.getElementById('textInput').classList.add('hidden');
+                document.getElementById('urlInput').classList.remove('hidden');
+            }
+            
+            // Hide results and errors
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('error').style.display = 'none';
+        }
+
+        document.getElementById('recommendForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const loading = document.getElementById('loading');
+            const results = document.getElementById('results');
+            const error = document.getElementById('error');
+            
+            // Get query value based on current tab
+            const query = currentTab === 'text' 
+                ? document.getElementById('queryText').value.trim()
+                : document.getElementById('queryUrl').value.trim();
+            
+            if (!query) {
+                showError('Please enter a ' + (currentTab === 'text' ? 'query or job description' : 'URL'));
+                return;
+            }
+            
+            // Show loading
+            submitBtn.disabled = true;
+            loading.style.display = 'block';
+            results.style.display = 'none';
+            error.style.display = 'none';
+            
+            try {
+                const response = await fetch('/api/recommend', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        type: currentTab,
+                        query: query,
+                        top_k: 5
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (!response.ok) {
+                    throw new Error(data.error || 'Failed to get recommendations');
+                }
+                
+                displayResults(data.recommended_assessments);
+                
+            } catch (err) {
+                showError(err.message);
+            } finally {
+                submitBtn.disabled = false;
+                loading.style.display = 'none';
+            }
+        });
+
+        function displayResults(recommendations) {
+            const resultsBody = document.getElementById('resultsBody');
+            const results = document.getElementById('results');
+            const resultCount = document.getElementById('resultCount');
+            
+            resultsBody.innerHTML = '';
+            
+            recommendations.forEach((rec, index) => {
+                const testTypes = Array.isArray(rec.test_type) ? rec.test_type.join(', ') : rec.test_type;
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td class="assessment-name">
+                        <a href="${rec.url}" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">
+                            ${rec.name}
+                        </a>
+                    </td>
+                    <td><span class="similarity-score">${rec.duration || 'N/A'}</span></td>
+                    <td style="font-size: 0.9em;">${rec.description}</td>
+                    <td><span class="similarity-score">${testTypes}</span></td>
+                    <td><span class="similarity-score">${rec.adaptive_support}</span></td>
+                    <td><span class="similarity-score">${rec.remote_support}</span></td>
+                `;
+                resultsBody.appendChild(row);
+            });
+            
+            resultCount.textContent = `${recommendations.length} result${recommendations.length !== 1 ? 's' : ''}`;
+            results.style.display = 'block';
+        }
+
+        function showError(message) {
+            const error = document.getElementById('error');
+            error.textContent = '❌ ' + message;
+            error.style.display = 'block';
+        }
+
+        // Load stats on page load
+        fetch('/api/stats')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('totalAssessments').textContent = data.total_assessments;
+            })
+            .catch(err => console.error('Failed to load stats:', err));
+    </script>
+</body>
+</html>

@@ -1,0 +1,548 @@
+[
+  {
+    "url": "https://www.shl.com/products/product-catalog/view/global-skills-development-report/",
+    "name": "Global Skills Development Report",
+    "description": "Global Skills Development Report : This report is designed to be given to individuals who have completed the Global Skills Assessment (GSA). With coverage across the Great 8 Domains, this…",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 25
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/python-new/",
+    "name": "Python (New)",
+    "description": "Python (New): Multi-choice test that measures the knowledge of Python programming, databases, modules and library.",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 11
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/java-8-new/",
+    "name": "Java 8 (New)",
+    "description": "Java 8 (New): Multi-choice test that measures the knowledge of Java class design, exceptions, generics, collections, concurrency, JDBC and Java I/O fundamentals.",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 18
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/core-java-entry-level-new/",
+    "name": "Core Java (Entry Level) (New)",
+    "description": "Core Java (Entry Level) (New): Multi-choice test that measures the knowledge of basic Java constructs, OOP concepts, file handling, exception handling, threads, generic class and inner class.",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 13
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/core-java-advanced-level-new/",
+    "name": "Core Java (Advanced Level) (New)",
+    "description": "Core Java (Advanced Level) (New): Multi-choice test that measures the knowledge of basic Java constructs, OOP concepts, files and exception handling, and advanced Java concepts like generics…",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 13
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/javascript-new/",
+    "name": "JavaScript (New)",
+    "description": "JavaScript (New): Multi-choice test that measures knowledge of programming in the JavaScript language and its application in front-end development.",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 9
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/net-framework-4-5/",
+    "name": ".NET Framework 4.5",
+    "description": ".NET Framework 4.5: The.NET Framework 4.5 test measures knowledge of .NET environment. Designed for experienced users, this test covers the following topics: Application…",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 30
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/net-mvc-new/",
+    "name": ".NET MVC (New)",
+    "description": ".NET MVC (New): Multi-choice test that measures the knowledge of Model-View-Controller (MVC) architecture, validation, security, routing, and areas.",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 17
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/net-mvvm-new/",
+    "name": ".NET MVVM (New)",
+    "description": ".NET MVVM (New): Multi-choice test that measures the knowledge of MVVM pattern, scenarios, data validation, ViewModel communication and Quick-start.",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 5
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/net-wcf-new/",
+    "name": ".NET WCF (New)",
+    "description": ".NET WCF (New): Multi-choice test that measures the knowledge of .NET fundamentals, WCF architecture, programming model, SOA, managing and programming WCF.",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 11
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/net-wpf-new/",
+    "name": ".NET WPF (New)",
+    "description": ".NET WPF (New): Multi-choice test that measures the knowledge of .NET basics, WPF, XAML controls, events, layouts, working with WPF windows/menus and deploying WPF…",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 9
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/net-xaml-new/",
+    "name": ".NET XAML (New)",
+    "description": ".NET XAML (New): Multi-choice test that measures the knowledge of XAML triggers, data binding, custom controls and layouts.",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 5
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/ado-net-new/",
+    "name": "ADO.NET (New)",
+    "description": "ADO.NET (New): Multi-choice test that measures the knowledge on the concepts of ADO.NET architecture, components and data provider objects.",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 10
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sql-server-new/",
+    "name": "SQL Server (New)",
+    "description": "SQL Server (New): Multi-choice test that measures the knowledge of basic SQL queries, creating and altering tables, filtering, grouping, aggregation in SQL and querying multiple…",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 11
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/automata-sql-new/",
+    "name": "Automata - SQL (New)",
+    "description": "Automata - SQL (New): A simulated query writing test that measures the ability to write SQL queries to perform DDL, DML and DCL tasks.",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 25
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/tableau-new/",
+    "name": "Tableau (New)",
+    "description": "Tableau (New): Multi-choice test that measures the knowledge of how to use Tableau to prepare tables, create visualizations, perform calculations, apply filters and carry out…",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 8
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/data-warehousing-concepts/",
+    "name": "Data Warehousing Concepts",
+    "description": "Data Warehousing Concepts: The Data Warehousing Concepts test measures knowledge of Data Warehousing. Designed for experienced users, this test covers the following topics: Big Data and…",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 25
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/css3-new/",
+    "name": "CSS3 (New)",
+    "description": "CSS3 (New): Multi-choice test that measures the knowledge of CSS3 and its application in providing style to web documents.",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 8
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/drupal-new/",
+    "name": "Drupal (New)",
+    "description": "Drupal (New): Multi-choice test that measures the knowledge of Drupal setup, content management, user interface, module development and security.",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 17
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/microsoft-excel-365-new/",
+    "name": "Microsoft Excel 365 (New)",
+    "description": "Microsoft Excel 365 (New): The Microsoft Excel 365 simulation evaluates ability to perform certain operations in a simulated environment of MS Excel, and includes the following topics…",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 35
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/microsoft-excel-365-essentials-new/",
+    "name": "Microsoft Excel 365 - Essentials (New)",
+    "description": "Microsoft Excel 365 - Essentials (New): The Microsoft Excel 365 - Essentials simulation evaluates ability to perform certain operations in a simulated environment of MS Excel, and includes the…",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 30
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/microsoft-word-365-new/",
+    "name": "Microsoft Word 365 (New)",
+    "description": "Microsoft Word 365 (New): The Microsoft Word 365 simulation evaluates ability to perform certain operations in a simulated environment of Microsoft Word, and includes the following…",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 35
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/selenium-new/",
+    "name": "Selenium (New)",
+    "description": "Selenium (New): Multi-choice test that measures the knowledge of Selenium IDE, Selenium RC, Selenium grid, web driver, test design considerations, user extensions, frameworks…",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 10
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/manual-testing-new/",
+    "name": "Manual Testing (New)",
+    "description": "Manual Testing (New): Multi-choice test that measures the knowledge of the software testing life cycle, testing tools and techniques, design of test cases and generation of test…",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 10
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/automata-fix-new/",
+    "name": "Automata - Fix (New)",
+    "description": "Automata - Fix (New): A simulated compiler integrated test to measure debugging skills in C, C++ and Java. The test checks the ability to fix logical or syntactical errors and to…",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 25
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/marketing-new/",
+    "name": "Marketing (New)",
+    "description": "Marketing (New): Multi-choice test that measures the conceptual knowledge of marketing principles, market research, consumer behavior, brand management, sales management…",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 9
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/digital-advertising-new/",
+    "name": "Digital Advertising (New)",
+    "description": "Digital Advertising (New): Multi-choice test that measures the candidate's knowledge about use of AdWords and tools to analyze ad performance on digital media.",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 7
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/interpersonal-communications/",
+    "name": "Interpersonal Communications",
+    "description": "Interpersonal Communications: This adaptive test measures the candidate's knowledge of how to employ effective verbal and non-verbal communication to send his or her message and manage…",
+    "adaptive_support": "Yes",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 15
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/business-communication-adaptive/",
+    "name": "Business Communication (adaptive)",
+    "description": "Business Communication (adaptive): This is an adaptive test that measures knowledge of communicating in the workplace. It measures the skills necessary to communicate effectively with coworkers…",
+    "adaptive_support": "Yes",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 24
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/english-comprehension-new/",
+    "name": "English Comprehension (New)",
+    "description": "English Comprehension (New): Multiple-choice test that measures vocabulary, grammar and reading comprehension skills.",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 25
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/written-english-v1/",
+    "name": "Written English v1",
+    "description": "Written English v1: The Written English test measures knowledge of US English grammar and English reading comprehension. It is designed for those with English as a second language…",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 30
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/svar-spoken-english-indian-accent-new/",
+    "name": "SVAR - Spoken English (Indian Accent)  (New)",
+    "description": "SVAR - Spoken English (Indian Accent)  (New): An automated spoken English test that measures fluency, pronunciation, active listening, vocabulary, grammar and spoken English understanding.     Your use of…",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 25
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/writex-email-writing-sales-new/",
+    "name": "WriteX - Email Writing (Sales) (New)",
+    "description": "WriteX - Email Writing (Sales) (New): Open response test that evaluates the ability to write proper emails in English. The test provides scores on content, grammar and email etiquette.     Your use…",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 15
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/occupational-personality-questionnaire-opq32r/",
+    "name": "Occupational Personality Questionnaire OPQ32r",
+    "description": "Occupational Personality Questionnaire OPQ32r: The SHL Occupational Personality Questionnaire, the OPQ32, is one of the most widely used and respected measures of workplace behavioural style in the world…",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 25
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-leadership-report/",
+    "name": "OPQ Leadership Report",
+    "description": "OPQ Leadership Report: This OPQ (Occupational Personality Questionnaire) report provides a detailed analysis of an individual's leadership potential.  It is based on SHL's leading…",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 45
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-team-types-and-leadership-styles-report/",
+    "name": "OPQ Team Types and Leadership Styles Report",
+    "description": "OPQ Team Types and Leadership Styles Report: This OPQ (Occupational Personality Questionnaire) report is based on Belbin's team types and Bass's leadership and reporting styles.  Belbins team types…",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 45
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/enterprise-leadership-report-2-0/",
+    "name": "Enterprise Leadership Report 2.0",
+    "description": "Enterprise Leadership Report 2.0: Assess and benchmark your leaders against enterprise leadership - the model for leader impact to drive business results in a complex work environment.  For…",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 45
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/verify-verbal-ability-next-generation/",
+    "name": "Verify - Verbal Ability - Next Generation",
+    "description": "Verify - Verbal Ability - Next Generation: The Verbal Ability test measures the ability to read written passages and comprehend the text, interpret tone and author intent, identify main ideas, and…",
+    "adaptive_support": "Yes",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 15
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/verify-numerical-ability/",
+    "name": "Verify - Numerical Ability",
+    "description": "Verify - Numerical Ability: The next-generation Verify Numerical Ability Test provides a replacement for the existing Numerical Reasoning test in our Verify range of ability tests and the…",
+    "adaptive_support": "Yes",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 20
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/shl-verify-interactive-inductive-reasoning/",
+    "name": "SHL Verify Interactive - Inductive Reasoning",
+    "description": "SHL Verify Interactive - Inductive Reasoning: Evaluates ability to identify specific patterns in data or situations and generalize that information to broader contexts.",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 20
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/shl-verify-interactive-numerical-calculation/",
+    "name": "SHL Verify Interactive Numerical Calculation",
+    "description": "SHL Verify Interactive Numerical Calculation: The Verify Interactive Numerical Calculation test measures a candidate’s ability to work with numbers and use appropriate mathematics in different situations…",
+    "adaptive_support": "Yes",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 10
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/global-skills-assessment/",
+    "name": "Global Skills Assessment",
+    "description": "Global Skills Assessment: The Global Skills Assessment (GSA) is an assessment used to measure 96 discrete skills/behaviors. These 96 skill scores are directly aligned to the most…",
+    "adaptive_support": "No",
+    "remote_support": "Yes",
+    "test_type": [
+      "Personality & Behaviour",
+      "Competencies",
+      "Knowledge & Skills"
+    ],
+    "duration": 16
+  }
+]
