@@ -189,9 +189,9 @@ def health_check():
 
 if __name__ == '__main__':
     print("\n" + "="*80)
-    print("🚀 SHL Assessment Recommendation System (Local RAG)")
+    print("SHL Assessment Recommendation System (RAG)")
     print("="*80)
     print(f"\n✓ Server starting on http://localhost:5001")
     print(f"✓ Open your browser and navigate to: http://localhost:5001")
-    print(f"\n💡 Press CTRL+C to stop the server\n")
+    print(f"\n Press CTRL+C to stop the server\n")
     app.run(debug=False, host='0.0.0.0', port=5001)

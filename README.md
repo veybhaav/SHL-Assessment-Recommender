@@ -25,23 +25,16 @@ A **Generative AI-powered** web application that **reasons through** natural lan
     cd /Users/soc_team/Desktop/SHL
     ```
 
-2.  **Set your API Key:**
-    ```bash
-    # For macOS/Linux
-    export GOOGLE_API_KEY='YOUR_API_KEY_HERE'
-    
-    # For Windows
-    set GOOGLE_API_KEY='YOUR_API_KEY_HERE'
-    ```
 
-3.  **Install dependencies** (already installed in .venv):
-    ```bash
+
+2.  **Install dependencies** (already installed in .venv):
+  ```bash
     # Note: 'sentence-transformers' is replaced with the LLM's client library
     pip install pandas numpy scikit-learn flask beautifulsoup4 requests openpyxl google-generativeai
     # or 'openai' if using OpenAI
     ```
 
-4.  **Verify data files exist:**
+3.  **Verify data files exist:**
     - `shl_assessments.json` - Assessment database (this is now the primary data source)
 
 ## Usage

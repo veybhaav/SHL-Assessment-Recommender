@@ -355,26 +355,26 @@ def evaluate_system():
     print("SUMMARY")
     print("="*80)
     
-    print(f"\n✅ Total Test Queries: {len(TEST_QUERIES)}")
-    print(f"✅ Mean Recall@5: {mean_recall_5:.2%}")
-    print(f"✅ Mean Recall@10: {mean_recall_10:.2%}")
-    print(f"✅ Min Recall@10: {min(recalls_10):.2%}")
-    print(f"✅ Max Recall@10: {max(recalls_10):.2%}")
-    print(f"✅ Std Dev: {np.std(recalls_10):.2%}")
+    print(f"\n Total Test Queries: {len(TEST_QUERIES)}")
+    print(f" Mean Recall@5: {mean_recall_5:.2%}")
+    print(f" Mean Recall@10: {mean_recall_10:.2%}")
+    print(f" Min Recall@10: {min(recalls_10):.2%}")
+    print(f" Max Recall@10: {max(recalls_10):.2%}")
+    print(f" Std Dev: {np.std(recalls_10):.2%}")
     
     # Performance rating
     if mean_recall_10 >= 0.8:
         rating = "EXCELLENT"
-        emoji = "🌟"
+        emoji = ""
     elif mean_recall_10 >= 0.6:
         rating = "GOOD"
-        emoji = "✅"
+        emoji = ""
     elif mean_recall_10 >= 0.4:
         rating = "FAIR"
-        emoji = "⚠️"
+        emoji = ""
     else:
         rating = "NEEDS IMPROVEMENT"
-        emoji = "❌"
+        emoji = ""
     
     print(f"\n{emoji} Performance Rating: {rating}")
     print(f"{emoji} System Accuracy: {mean_recall_10:.1%}")
@@ -419,5 +419,5 @@ if __name__ == "__main__":
     test_results, mean_recall = evaluate_system()
     
     print("\n" + "="*80)
-    print(f"🎯 FINAL SCORE: Mean Recall@10 = {mean_recall:.2%}")
+    print(f" FINAL SCORE: Mean Recall@10 = {mean_recall:.2%}")
     print("="*80)

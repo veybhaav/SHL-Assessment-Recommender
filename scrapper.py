@@ -86,7 +86,7 @@ class SHLIndividualTestScraper:
                 continue
             
             visited_pages.add(current_page)
-            print(f"\n📄 Crawling page: {current_page}")
+            print(f"\n Crawling page: {current_page}")
             
             try:
                 response = requests.get(current_page, headers=self.headers, timeout=15)
@@ -119,7 +119,7 @@ class SHLIndividualTestScraper:
                             else:
                                 print(f"   - Job Solution: {name}")
                 
-                print(f"   📊 Found {products_found} new products on this page")
+                print(f"   Found {products_found} new products on this page")
                 
                 # Check if there are more products (if we found 12+, there might be more pages)
                 if products_found >= 12:
@@ -464,7 +464,7 @@ class SHLIndividualTestScraper:
         
         # If crawling didn't find enough, use smart fallback
         if len(assessment_urls) < 20:
-            print("\n⚠️  Found fewer assessments than expected. Adding known individual tests...")
+            print("\n  Found fewer assessments than expected. Adding known individual tests...")
             fallback_urls = self.get_individual_test_fallback_urls()
             for url in fallback_urls:
                 if url not in assessment_urls:
@@ -584,11 +584,11 @@ if __name__ == "__main__":
     scraper.save_to_json('shl_individual_tests.json')
     
     print("\n" + "="*80)
-    print("✅ SCRAPING COMPLETE!")
+    print(" SCRAPING COMPLETE!")
     print("="*80)
-    print(f"\n📊 Total Individual Test Assessments: {len(assessments)}")
-    print(f"📄 CSV: shl_individual_tests.csv")
-    print(f"📄 JSON: shl_individual_tests.json")
+    print(f"\n Total Individual Test Assessments: {len(assessments)}")
+    print(f" CSV: shl_individual_tests.csv")
+    print(f" JSON: shl_individual_tests.json")
     
     if df is not None and len(df) > 0:
         print("\n" + "="*80)

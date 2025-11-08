@@ -1,5 +1,5 @@
 """
-Intelligent Recommendation System (Local RAG-like Pipeline)
+Intelligent Recommendation System (RAG-like Pipeline)
 
  Multi-Query Retriever
 - STAGE 1 (Extract): Extracts features (level, duration) AND a "cleaned"
@@ -434,7 +434,6 @@ if __name__ == "__main__":
         "https://www.shl.com/solutions/products/product-catalog/view/core-java-entry-level/",
         "https://www.shl.com/solutions/products/product-catalog/view/occupational-personality-questionnaire-opq/",
         "https://www.shl.com/products/product-catalog/view/global-skills-development-report/"
-
 
     ]
     
