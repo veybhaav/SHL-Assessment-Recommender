@@ -4,10 +4,8 @@ Powered by a 3-stage local RAG-like pipeline (no API keys required).
 """
 
 from flask import Flask, request, jsonify, render_template
-# FIX: Import the correct class name from your main.py
 from main import IntelligentRecommender
 import traceback
-from dotenv import load_dotenv
 
 
 app = Flask(__name__)
